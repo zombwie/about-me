@@ -205,8 +205,8 @@ header #toggle:after
 .form-control
 {
   font-size: 150%;
-  width: 309px;
-  border-radius: 15px;
+  width: 70%;
+  border-radius: 15px
 }
 .button-24 {
   background: #FF4742;

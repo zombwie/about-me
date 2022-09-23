@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Responsive Portfolio Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <section class="banner" id="sec">.
+    <header>
+      <a href="#" class="logo">Oliver Ono Wingerei</a>
+      <div id="toggle" onclick="toggle()"></div>
+    </header>
+    <div class="content">
+        <div">
+            <div>
+              <form onsubmit="sendContact(event)" id="form">
+                <div class="hjelpbox">
+                    <input type="email" class="form-control" id="emailInput" placeholder="Skriv in emailen din.">
+              </div>
+              <div class="hjelpbox">
+                <textarea class="form-control" id="messageInput" rows="8" placeholder="Hva kan jeg hjelpe deg med?"></textarea>
+              </div>
+            <div style="text-align: center;">
+            <button  type="submit" class="button-24" role="button">Send</button>
+            </form>
+            </div>
+          </div>  
+    </div>
+  </section>
+  <div id="navigation">
+    <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="meg.html">Om meg</a></li>
+        <li><a href="contact.html">kontakt meg</a></li>
+      </ul>
+    </div>
+  <script type="text/javascript">
+    function toggle(){
+      var sec = document.getElementById('sec');
+      var nav = document.getElementById('navigation');
+      sec.classList.toggle('active')
+      nav.classList.toggle('active')
+    }
+  </script>
+</body>
+</html>

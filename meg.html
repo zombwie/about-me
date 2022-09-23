@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Responsive Portfolio Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <section class="banner" id="sec">.
+    <header>
+      <a href="#" class="logo">Oliver Ono Wingerei</a>
+      <div id="toggle" onclick="toggle()"></div>
+    </header>
+    <div class="content">
+      <h2><span>About me</span></h2>
+      <h2>Me</h2> 
+
+        <p>I grew up in Oslo and went to Skøyensåsen school before I came to Kuben. I have 1 brother and live whit my dad. But I also have a couple of siblings, they all live remarkably close so we are often together. When I am not in school, I like to play video games whit my friends and code. When I graduate from Kuben I wish to be a programmer just like my father. I have always enjoyed programing and learning new things. To sum it up, I would say I am quite ordinary and an all-around friendly guy to get to know.</p>
+        
+        <h2>Skills</h2>
+        
+        <p>I have been interested in coding my whole life and I started when I was just 12. I know quite a few languages. I know Java, Html, Java script, Python and CSS. I have coded many websites before and I am also quite good at video editing and photo editing whit photoshop and premiere pro. I have a lot of experience whit Linux and MySQL, from my time running the biggest Norwegian Minecraft server.</p>
+        
+        <h2>Experience </h2> 
+        
+        <p>I ran a Minecraft server for a couple of years, I also made my own webstore. I have also made a couple of java Minecraft plugins.  </p>
+        <img src="dript.png" alt="Oliver" style="width: 500px; padding-left: 50px;" id="meg">
+    </div>
+  </section>
+  <div id="navigation">
+    <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="meg.html">Om meg</a></li>
+        <li><a href="contact.html">kontakt meg</a></li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <script type="text/javascript">
+    function toggle(){
+      var sec = document.getElementById('sec');
+      var nav = document.getElementById('navigation');
+      sec.classList.toggle('active')
+      nav.classList.toggle('active')
+    }
+    gsap.from("#meg",{
+		  scrollTrigger : {
+			scrub: true
+		  },
+		  x: -650,
+		})
+  </script>
+</body>
+</html>

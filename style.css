@@ -23,9 +23,9 @@ header .logo
 {
   position: relative;
   font-weight: 700;
-  color: #fff;
+  color: #3333cc;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 3em;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: 0.6s;
@@ -91,10 +91,11 @@ header #toggle:after
 {
   color: #fff;
   font-size: 2.5em;
+  padding-top: 50px;
 }
 .banner .content h2 span
 {
-  color: #40c3ff;
+  color: #3333cc;
   font-size: 1.2em;
 }
 .banner .content p
@@ -122,7 +123,7 @@ header #toggle:after
   right: -200px;
   width: 400px;
   height: 100vh;
-  background: #40c3ff;
+  background: #3333cc;
   z-index: 1;
   display: grid;
   place-items: center;
@@ -204,7 +205,7 @@ header #toggle:after
 }
 .form-control
 {
-  font-size: 150%;
+  font-size: 120%;
   width: 75%;
   border-radius: 15px
 }
@@ -249,6 +250,7 @@ form
   width: 120%;
   border-radius: 50px;
   text-align: center;
+  padding-right: 20%;
 }
 .flex-container {
   display: flex;

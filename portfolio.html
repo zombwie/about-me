@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Portefølje</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <section class="banner" id="sec">.
+    <header>
+      <a href="#" class="logo">Oliver</a>
+      <div id="toggle" onclick="toggle()"></div>
+    </header>
+    <div class="content" style="padding-bottom: 40%;">
+      <h2><span>Mine Prosjekter</span></h2>
+      <h2>Oslo lacross hjemeside</h2>
+
+        <p>Jeg lagd en nettside til idretslaget Osslo lacross. Denne siden jobbet jeg med i en uke og det var en av de første nettisdene jeg lagde. Det er noen små ting jeg ville ha endret men jeg ble fornøyd med slutt resultatet.</p>
+        <button class="myButton" onclick="document.location='https://thankful-coast-081da750f.2.azurestaticapps.net/'" >Link til siden!</button>
+
+      <h2>BattleCattle</h2>
+      <p>BattleCattle er en norsk minecraft server jeg har jobbet på i litt over et år. det er en av de største i norge og jeg har lært mye av den. Som hvordan man setter opp servere og hvordan man programerer i Java. jeg har også lært mye om nettbutikker og såne andre ting. jeg har også lagd en nettside som viser minecraft kartet i nettleseren. Dette og nettbutikken er linka under! Genom dette prosjekte har jeg også jobbet mye med mysql og andre databaser. Det er nemlig ganske mye data og lagre når man har hat over 2000 spillere inpå serveren gjenom det siste året.</p>
+      <button class="myButton" onclick="document.location='https://battlecattle.store/'" >Link til butikken!</button>
+      <button class="myButton" onclick="document.location='https://map.battlecattle.tk/#'" >Link til kartet!</button>
+    </div>
+  </section>
+  <div id="navigation">
+    <ul>
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="meg.html">Om meg</a></li>
+        <li><a href="contact.html">kontakt meg</a></li>
+        <li><a href="portfolio.html">Portefølje</a></li>
+      </ul>
+    </div>
+  <script type="text/javascript">
+    function toggle(){
+      var sec = document.getElementById('sec');
+      var nav = document.getElementById('navigation');
+      sec.classList.toggle('active')
+      nav.classList.toggle('active')
+    }
+  </script>
+</body>
+</html>

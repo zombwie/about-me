@@ -3,10 +3,10 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  <title>hjelp</title>
+  <title>Spill</title>
   <link id="theme" rel="stylesheet" type="text/css" href="style.css"/>
-  <script src="script.js"></script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="script.js"></script>
 </head>
 <body>
   <section class="banner" id="sec">.
@@ -14,24 +14,14 @@
       <a href="#" class="logo">Oliver</a>
       <div id="toggle" onclick="toggle()"></div>
     </header>
-    <div class="content" style="padding-bottom: 40%;">
-      <h2><span>Kontakt meg</span></h2>
-        <div>
-            <div>
-              <form onsubmit="sendContact(event)" id="form">
-                <div class="hjelpbox">
-                    <input type="email" class="form-control" id="emailInput" placeholder="Skriv inn e-posten">
-              </div>
-              <div class="hjelpbox">
-                <textarea class="form-control" id="messageInput" rows="8" placeholder="Hva kan jeg hjelpe deg med?"></textarea>
-              </div>
-            <div style="text-align: center;">
-              <div id="sendknapp">
-                <button  type="submit" class="myButton" role="button" id="sendknapp">Send</button>
-              </div>
-            </form>
-            </div>
-          </div>  
+    <div class="content">
+      <h2><span>Spillet!</span></h2>
+      <h2 id="penger">Penger:</h2>
+      <h2 id="spillertid">Spillertid: </h2>
+      <h2 id="nivå">Nivå: </h2>
+      <h2 id="kost"></h2>
+      <button class="myButton" onclick="trykk()">Trykk meg!</button>
+      <button class="myButton" onclick="oppgrader()">Oppgrader!</button>
     </div>
   </section>
   <div id="navigation">
@@ -46,13 +36,14 @@
       </label>
     </ul>
     </div>
-  <script type="text/javascript">
+    <script type="text/javascript">
     function toggle(){
       var sec = document.getElementById('sec');
       var nav = document.getElementById('navigation');
       sec.classList.toggle('active')
       nav.classList.toggle('active')
     }
-  </script>
+    </script>
+    <script src="game.js"></script>
 </body>
 </html>

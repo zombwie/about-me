@@ -74,7 +74,7 @@ header #toggle:after
   width: 100%;
   padding: 100px;
   min-height: 100vh;
-  background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(12,25,44,1) 100%);
+  background: radial-gradient(circle, #1B02A3 0%, #006AF9 100%);
   display: flex;
   align-items: center;
   transition: 0.5s;
@@ -96,7 +96,7 @@ header #toggle:after
 }
 .banner .content h2 span
 {
-  color: #3333cc;
+  color: #000;
   font-size: 1.2em;
 }
 .banner .content p
@@ -124,7 +124,7 @@ header #toggle:after
   right: -200px;
   width: 400px;
   height: 100vh;
-  background: #3333cc;
+  background: #00C0F9;
   z-index: 1;
   display: grid;
   place-items: center;

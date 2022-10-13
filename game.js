@@ -3,12 +3,14 @@ const nivåS = JSON.parse(localStorage.getItem("nivå"));
 const spillertidS = JSON.parse(localStorage.getItem("spillertid"));
 const multiplyerS = JSON.parse(localStorage.getItem("multiplyer"));
 const oppgaderingskostnadS = JSON.parse(localStorage.getItem("oppgraderingskostnad"));
+const minutterS = JSON.parse(localStorage.getItem("minutter"));
 
 var penger = pengerS;
 var nivå = nivåS;
 var spillertid = spillertidS;
 var multiplyer = multiplyerS;
 var oppgraderingskostnad = oppgaderingskostnadS;
+var minutter = minutterS;
 
 const kostEL = document.getElementById('kost');
 const pengerEl = document.getElementById("penger"); 
@@ -26,7 +28,11 @@ const delay = (delayInms) => {
 }
 function teller() {
         spillertid = spillertid + 1;
-        console.log(spillertid);
+        if (spillertid >= 60) {
+            spillertid = 0;
+            minutter = minutter + 1;
+            localStorage.setItem("minutter", JSON.stringify(minutter));
+        }
 }
 const timer = async () => {
     pengerTeller();
@@ -38,9 +44,8 @@ timer();
 
 function pengerTeller() {
     penger = penger + 1 * multiplyer;
-    console.log("Penger:", penger);
     pengerEl.innerHTML = 'Penger: ' + penger;
-    spillertidEl.innerHTML = 'Spillertid: ' + spillertid;
+    spillertidEl.innerHTML = 'Spillertid: ' + minutter + ' M ' + spillertid + ' S';
     nivåEl.innerHTML = 'Nivå: ' + nivå;
     kostEL.innerHTML = 'Neste oppgradering: ' + oppgraderingskostnad;
     localStorage.setItem("penger", JSON.stringify(penger));

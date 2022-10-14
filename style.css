@@ -172,7 +172,7 @@ header #toggle:after
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  border-radius: 80px; ;
+  border-radius: 80px;
 }
 @media (max-width: 767px)
 {
@@ -223,6 +223,10 @@ header #toggle:after
   {
     margin: initial;
     margin-right: 10px;
+  }
+  .video
+  {
+    width: 100%;
   }
 }
 .hjelpbox
@@ -280,4 +284,17 @@ form
 #sendknapp {
   display: flex;
   justify-content: center;
+}
+.video {
+  display: inline-flex;
+  margin-top: 20px;
+  border-radius: 40px; ;
+  width: 70%;
+}
+.prtimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 40px; ;
 }

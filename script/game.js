@@ -11,11 +11,14 @@ var spillertid = spillertidS;
 var multiplyer = multiplyerS;
 var oppgraderingskostnad = oppgaderingskostnadS;
 var minutter = minutterS;
+var prosent = 0;
 
 const kostEL = document.getElementById('kost');
+const kostpEL = document.getElementById('kostp');
 const pengerEl = document.getElementById("penger"); 
 const nivåEl = document.getElementById("nivå");
 const spillertidEl = document.getElementById("spillertid");
+const oppgraderingsEl = document.getElementById("iBar");
 
 if (multiplyer == null){
     nivå = 1;
@@ -52,13 +55,26 @@ function pengerTeller() {
     localStorage.setItem("nivå", JSON.stringify(nivå));
     localStorage.setItem("spillertid", JSON.stringify(spillertid));
     localStorage.setItem("multiplyer", JSON.stringify(multiplyer));
+
+    prosent = (penger / oppgraderingskostnad) * 100;
+    if (prosent > 100) {
+        prosent = 100;
+    }
+    oppgraderingsEl.style.width = prosent + '%';
+    oppgraderingsEl.innerHTML = ~~prosent + '%';
+
 }
 
 function trykk() {
-    penger = penger + 1;
-    console.log(penger);
+    penger = penger + 5;
     pengerEl.innerHTML = 'Penger: ' + penger;
     localStorage.setItem("penger", JSON.stringify(penger));
+    prosent = (penger / oppgraderingskostnad) * 100;
+    if (prosent > 100) {
+        prosent = 100;
+    }
+    oppgraderingsEl.style.width = prosent + '%';
+    oppgraderingsEl.innerHTML = ~~prosent + '%';
 }
 
 function oppgrader() {
@@ -72,6 +88,6 @@ function oppgrader() {
         nivåEl.innerHTML = 'Nivå: ' + nivå;
     }
     else {
-        alert("Du har ikke nok penger du trenger " + oppgraderingskostnad + " penger");
+        alert("Du har ikke nok penger du trenger " + oppgraderingskostnad + " penger. Du er " + ~~prosent + "% av veien!");
     }
 }

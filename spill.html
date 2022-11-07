@@ -6,12 +6,14 @@
   <title>Spill</title>
   <link id="theme" rel="stylesheet" type="text/css" href="css/style.css"/>
   <script src="script/script.js"></script>
-  <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
 </head>
 <body>
   <section class="banner" id="sec">.
     <header>
-      <a href="#" class="logo">Oliver</a>
+      <a href="/index.html" class="logo"><img src="media/OliverW-logo.png" width="200%"></a>
       <div id="toggle" onclick="toggle()"></div>
     </header>
     <div class="content">
@@ -20,8 +22,11 @@
       <h2 id="spillertid">Spillertid: </h2>
       <h2 id="nivå">Nivå: </h2>
       <h2 id="kost"></h2>
+      <div id="bar">
+        <div id="iBar">1%</div>
+      </div>
       <button class="myButton" onclick="trykk()">Trykk meg!</button>
-      <button class="myButton" onclick="oppgrader()">Oppgrader!</button>
+      <button class="myButton" id="oppgradering" onclick="oppgrader()"><div id="virt">oppgrader</div></button>
     </div>
   </section>
   <div id="navigation">

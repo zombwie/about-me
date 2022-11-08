@@ -19,12 +19,31 @@
     </header>
     <div class="content">
     <div class="rewardp" id="cheesy">
-      <div class="reward">
+      <div class="reward" onmousedown="cheld()" onmouseup="cunheld()">
           <div class="rewardv">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-264niC6w1Y" title="Easy Som feirer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <button class="myButton" id="ts" onclick="nopupup()">Tilbake til spillet!</button>
+            <iframe width="400px" height="100%"  src="https://www.youtube.com/embed/-264niC6w1Y" title="Easy Som feirer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <button class="myButton" id="ts" onclick="nomemesplayer()">Tilbake til spillet!</button>
         </div>
       </div>
+    </div>
+    <div class="content">
+      <div class="rewardp" id="sokker">
+        <div class="reward" onmousedown="sheld()" onmouseup="sunheld()">
+            <div class="rewardv">
+              <iframe width="400px" height="100%" src="https://www.youtube.com/embed/BQ9TqfZPdC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <button class="myButton" id="ts" onclick="nomemesplayer()">Tilbake til spillet!</button>
+          </div>
+        </div>
+      </div>
+    <div class="meme" id="cmeme">
+     <div class="memeMeny">
+      <div class="hvitoverskrift">Memes</div>
+      <button class="myButton" onclick="chesymeme()" id="meme1">Meme1</button>
+      <button class="myButton" onclick="nopupup()" id="meme2">Meme2</button>
+      <button class="myButton" onclick="sokker()" id="meme3">Sokke til jeg popper</button>
+      <button class="myButton" onclick="chesymeme()" id="meme4">Cheesy rapp</button>
+      <button class="myButton" onclick="nomeme()">Tilbake til spillet!</button>
+     </div>
     </div>
       <h2><span>Spillet!</span></h2>
       <h2 id="penger">Penger:</h2>
@@ -36,6 +55,7 @@
       </div>
       <button class="myButton" onclick="trykk()">Trykk meg!</button>
       <button class="myButton" id="oppgradering" onclick="oppgrader()"><div id="virt">oppgrader</div></button>
+      <button class="myButton" id="unlocker" onclick="mememesopp()"><div id="virt">Memes</div></button>
     </div>
   </section>
   <div id="navigation">

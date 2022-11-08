@@ -19,7 +19,14 @@ const pengerEl = document.getElementById("penger");
 const nivåEl = document.getElementById("nivå");
 const spillertidEl = document.getElementById("spillertid");
 const oppgraderingsEl = document.getElementById("iBar");
-const popupEl = document.getElementById("cheesy");
+const cheesyEl = document.getElementById("cheesy");
+const unlockerEL = document.getElementById("unlocker");
+const cmemeEl = document.getElementById("cmeme");
+const memek1El = document.getElementById("meme1");
+const memek2El = document.getElementById("meme2");
+const memek3El = document.getElementById("meme3");
+const memek4El = document.getElementById("meme4");
+const sokkerEl = document.getElementById("sokker");
 
 if (multiplyer == null) {
 	nivå = 1;
@@ -46,22 +53,6 @@ const timer = async() => {
 	timer();
 };
 timer();
-function pupup() {
-    if (cheesys == false) {
-        console.log("not Cheesy");
-        popupEl.style.visibility = 'hidden';
-    }
-    else {
-        console.log("cheesy");
-        popupEl.style.visibility = 'visible';
-    }
-}
-
-function nopupup() {
-    cheesys = false;
-    pupup();
-}
-
 function pengerTeller() {
 	penger = penger + 1 * multiplyer;
 	pengerEl.innerHTML = 'Penger: ' + penger;
@@ -80,7 +71,6 @@ function pengerTeller() {
 	oppgraderingsEl.style.width = prosent + '%';
 	oppgraderingsEl.innerHTML = ~~prosent + '%';
 }
-
 
 function trykk() {
 	penger = penger + 5;
@@ -104,10 +94,139 @@ function oppgrader() {
 		kostEL.innerHTML = 'Neste oppgradering: ' + oppgraderingskostnad;
 		nivåEl.innerHTML = 'Nivå: ' + nivå;
 		if (nivå == 20) {
-            cheesys = true;
             pupup();
 		}
 	} else {
 		alert("Du har ikke nok penger du trenger " + oppgraderingskostnad + " penger. Du er " + ~~prosent + "% av veien!");
 	}
+}
+
+
+
+function memes() {
+    if (nivå > 4) {
+        memes = 1;
+        console.log(memes)
+        unlocker();
+    }
+    if (nivå > 9) {
+        memes = memes + 1;
+        console.log(memes)
+        unlocker();
+    }
+    if (nivå > 14) {
+        memes = memes + 1;
+        console.log(memes)
+        unlocker();
+    }
+    if (nivå > 19) {
+        memes = memes + 1;
+        console.log(memes)
+        unlocker();
+    }
+}
+function unlocker() {
+    if (memes == 1) {
+        document.getElementById("unlocker").style.visibility = 'visible';
+        console.log("unlocker");
+    }
+}
+
+memes();
+function nomeme() {
+    cmemeEl.style.visibility = 'hidden';
+    memek1El.style.visibility = 'hidden';
+    memek2El.style.visibility = 'hidden';
+    memek3El.style.visibility = 'hidden';
+    memek4El.style.visibility = 'hidden';
+}
+
+function mememesopp() {
+    cmemeEl.style.visibility = 'visible';
+    if (memes == 1) {
+        memek1El.style.visibility = 'visible';
+    }
+    if (memes == 2) {
+        memek1El.style.visibility = 'visible';
+        memek2El.style.visibility = 'visible';
+    }
+    if (memes == 3) {
+        memek1El.style.visibility = 'visible';
+        memek2El.style.visibility = 'visible';
+        memek3El.style.visibility = 'visible';
+    }
+    if (memes == 4) {
+        memek1El.style.visibility = 'visible';
+        memek2El.style.visibility = 'visible';
+        memek3El.style.visibility = 'visible';
+        memek4El.style.visibility = 'visible';
+    }
+}
+
+
+function chesymeme() {
+    cheesyEl.style.visibility = 'visible';
+    nomeme();
+}
+function sokker() {
+    sokkerEl.style.visibility = 'visible';
+    nomeme();
+}
+
+
+
+
+function nomemesplayer() {
+    cheesyEl.style.visibility = 'hidden';
+    sokkerEl.style.visibility = 'hidden';
+}
+
+
+
+// memes drag and drop
+var pressed = false;
+
+
+//individuelle memes
+
+
+//cheesy
+function cheld() {
+    pressed = true;
+    cheesymove()
+}
+function cunheld() {
+    pressed = false;
+}
+function cheesymove() {
+    onmousemove = function(e){
+        if (pressed == true) {
+        var minusx = 200;
+        var minusy = 200;
+        cheesyEl.style.left = e.clientX - minusx + 'px';
+        cheesyEl.style.top = e.clientY - minusy + 'px';
+        }
+        else {
+        }
+    }
+}
+//sokker
+function sheld() {
+    pressed = true;
+    sokkermove()
+}
+function sunheld() {
+    pressed = false;
+}
+function sokkermove() {
+    onmousemove = function(e){
+        if (pressed == true) {
+        var minusx = 200;
+        var minusy = 200;
+        sokkerEl.style.left = e.clientX - minusx + 'px';
+        sokkerEl.style.top = e.clientY - minusy + 'px';
+        }
+        else {
+        }
+    }
 }

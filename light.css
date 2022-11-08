@@ -329,6 +329,7 @@ form
   position: fixed;
   top: 4;
   left: 15%;
+  bottom: 4;
   opacity: 0.99;
   visibility: hidden;
 }

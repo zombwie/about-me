@@ -323,7 +323,7 @@ form
   margin-top: 20px;
   border-radius: 10px; ;
   background-color: white;
-  width: 70%;
+  width: 430px;
   padding-top: 0px;
   justify-content: center;
   align-items: center;
@@ -332,14 +332,54 @@ form
   width: 100%;
   height: 100%;
   position: fixed;
-  top: 4;
-  left: 15%;
   opacity: 0.99;
   visibility: hidden;
 }
 .rewardv {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 #ts {
   width: 95%;
+}
+#unlocker {
+  visibility: hidden;
+}
+.meme {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 30%;
+  left: 15%;
+  opacity: 0.99;
+  visibility: hidden;
+  justify-content: center;
+}
+.memeMeny {
+  margin-top: 20px;
+  border-radius: 10px; ;
+  background-color: white;
+  width: 430px;
+  padding-top: 0px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.hvitoverskrift {
+  color: black;
+  font-size: 2.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+#meme1 {
+  visibility: hidden;
+}
+#meme2 {
+  visibility: hidden;
+}
+#meme3 {
+  visibility: hidden;
+}
+#meme4 {
+  visibility: hidden;
 }

@@ -27,6 +27,7 @@ const memek2El = document.getElementById("meme2");
 const memek3El = document.getElementById("meme3");
 const memek4El = document.getElementById("meme4");
 const sokkerEl = document.getElementById("sokker");
+const godeordEl = document.getElementById("quoutes");
 
 if (multiplyer == null) {
 	nivå = 1;
@@ -172,6 +173,10 @@ function sokker() {
     sokkerEl.style.visibility = 'visible';
     nomeme();
 }
+function godeord() {
+    godeordEl.style.visibility = 'visible';
+    nomeme();
+}
 
 
 
@@ -179,6 +184,7 @@ function sokker() {
 function nomemesplayer() {
     cheesyEl.style.visibility = 'hidden';
     sokkerEl.style.visibility = 'hidden';
+    godeordEl.style.visibility = 'hidden';
 }
 
 
@@ -227,4 +233,65 @@ function sokkermove() {
         }
     }
 }
+function scm() {
+    if (sheld = true) {
+        if (sokkerEl.addEventListener("click", scm)) {
+        sheld = false;
+        console.log("sheld = false");
+    }
+}
+}
 
+
+
+// quoute
+
+function qheld() {
+    pressed = true;
+    qoutemove()
+}
+function qunheld() {
+    pressed = false;
+}
+function qoutemove() {
+    onmousemove = function(e){
+        if (pressed == true) {
+        var minusx = 200;
+        var minusy = 200;
+        godeordEl.style.left = e.clientX - minusx + 'px';
+        godeordEl.style.top = e.clientY - minusy + 'px';
+        }
+        else {
+        }
+    }
+}
+function scm() {
+    if (sheld = true) {
+        if (godeordEl.addEventListener("click", scm)) {
+        sheld = false;
+        console.log("sheld = false");
+    }
+}
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const quote = document.getElementById("quoute");
+    const cite = document.getElementById("qtitle");
+    const button = document.getElementById("qbutton");
+  
+    async function updateQuote() {
+      const response = await fetch("https://api.quotable.io/random");
+      const data = await response.json();
+      if (response.ok) {
+        quote.textContent = data.content;
+        cite.textContent = "- " + data.author;
+      } else {
+        quote.textContent = "An error occured";
+        console.log(data);
+      }
+    }
+    button.addEventListener("click", updateQuote);
+    updateQuote();
+  });
+  
+  

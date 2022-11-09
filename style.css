@@ -327,6 +327,7 @@ form
   padding-top: 0px;
   justify-content: center;
   align-items: center;
+  box-shadow: gray 0px 0px 10px;
 } 
 .rewardp {
   width: 100%;
@@ -382,4 +383,17 @@ form
 }
 #meme4 {
   visibility: hidden;
+}
+.godeord {
+  color: black;
+  margin: 20px;
+  font-size: 20px;
+}
+.godeordt {
+  color: black;
+  margin: 20px;
+  font-size: 25px;
+}
+#qbutton {
+  width: 95%;
 }

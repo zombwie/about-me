@@ -187,9 +187,6 @@ function nomemesplayer() {
 var pressed = false;
 
 
-//individuelle memes
-
-
 //cheesy
 function cheld() {
     pressed = true;
@@ -230,3 +227,4 @@ function sokkermove() {
         }
     }
 }
+

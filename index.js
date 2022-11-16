@@ -6,10 +6,10 @@ const port = 25002
 var mysql = require('mysql')
 
 var conection = mysql.createConnection({
-    host: '65.108.15.66',
-    user: 'u90_2n3WDdYx1l',
-    password: 'z+R=D99h^ud!=Bzrov7d5e2F',
-    database: 's90_visitors'
+    host: '',
+    user: '',
+    password: '',
+    database: ''
 })
 app.get('/', (req, res) => {
   readFile('public/index.html', (err, data) => {

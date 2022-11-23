@@ -14,7 +14,7 @@
 <body>
   <section class="banner" id="sec">.
     <header>
-      <a href="#" class="logo"><img src="media/OliverW-logo.png" width="200%"></a>
+      <a href="/" class="logo"><img src="media/Oliver_logo.svg" width="200%"></a>
       <div id="toggle" onclick="toggle()"></div>
     </header>
     <div class="content">
@@ -55,14 +55,18 @@
       {
         method: 'GET'
       })
-      console.log(res)
       const data = await res.json()
-      var visitorsJson = data.info 
-      console.log(visitorsJson)
-      var visitors = visitorsJson.visitors;
-      outEl.innerHTML = "Du er den " + visitors + " til å besøke siden min!";
-    }
+      const visitors = JSON.stringify(data)
+      const besokende = JSON.parse(visitors).info[0].visitors
+      outEl.innerHTML = `Det er ${besokende} som her besøkt siden min! Ps.... den er live opptaterende!`
+    };
     getInfo()
+    setInterval(myMethod, 1000);
+
+    function myMethod( )
+    {
+      getInfo()
+    } 
   </script>
 </body>
 </html>

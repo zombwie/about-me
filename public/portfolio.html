@@ -6,6 +6,7 @@
   <title>Portefølje</title>
   <link id="theme" rel="stylesheet" type="text/css" href="style.css"/>
   <script src="script/script.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
@@ -13,7 +14,7 @@
 <body>
   <section class="banner" id="sec">.
     <header>
-      <a href="/index.html" class="logo"><img src="media/OliverW-logo.png" width="200%"></a>
+      <a href="/" class="logo"><img src="media/Oliver_logo.svg" width="200%"></a>
       <div id="toggle" onclick="toggle()"></div>
     </header>
     <div class="content" style="padding-bottom: 40%;">
@@ -39,6 +40,7 @@
       <p>Jeg har lenge drevet med video redigering og kan mye om alle adobe programene. Jeg kan redigere videoer og bilder, jeg kan også fly drone og er en god photograf. Unner kan du se noen av prosjektene mine.</p>
       <video src="media/tennis.mp4" class="video" controls></video>
       <video src="media/Telt.mp4" class="video" controls></video>
+      <div id="chart_div"></div>
     </div>
   </section>
   <div id="navigation">
@@ -58,6 +60,64 @@
       sec.classList.toggle('active')
       nav.classList.toggle('active')
     }
+
+
+    var y = new Date().getFullYear();
+    var m = new Date().getMonth() + 1;
+    var d = new Date().getDate();
+    var datas = 0;
+    var dagt = 0;
+    var outut = ['']
+
+    const baseUrl = 'http://localhost:25002/api?'
+
+    getInfo();
+      async function getInfo(e){
+          var dag = d - dagt;
+          var date = y + "-" + m + "-" + dag;
+          var date2 = y + "-" + m + "-" + dag;
+          const res = await fetch(baseUrl + "tid1=" + date2 + "%2000:00:00&tid2=" + date + "%2023:59:59",
+        {
+          method: 'GET'
+        });
+          const data = await res.json()
+          datas = JSON.stringify(data)
+          dag1 = JSON.parse(datas).TEST
+          console.log(date + ": " + dag1)
+          dagt = dagt + 1;
+          outut.push(dag1)
+        if (dagt < 6){
+          getInfo();
+        }
+        else{
+          google.charts.load('current', {packages: ['corechart', 'line']});
+          google.charts.setOnLoadCallback(drawBackgroundColor);
+        }
+    };
+function drawBackgroundColor() {
+      output = JSON.stringify(outut)
+      console.log(outut)
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Besøkende');
+
+      data.addRows([
+        [d - 6, outut[7]],   [d -5, outut[6]],   [d -4, outut[5]], [d -3, outut[4]], [d -2, outut[3]], [d - 1, outut[2]], [d, outut[1]],
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'dato'
+        },
+        vAxis: {
+          title: 'Besøkende'
+        },
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
   </script>
 </body>
 </html>

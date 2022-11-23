@@ -194,13 +194,11 @@ header #toggle:after
   {
     font-size: 1.8em;
   }
-  .bilde {
-    display: none;
-  }
   .banner .content p,
   .banner .content a
   {
     font-size: 1em;
+    text-align: left;
   }
   .banner.active
   {
@@ -218,6 +216,10 @@ header #toggle:after
     font-size: 1.5em;
     margin: 5px 0;
   }
+  header .logo
+  {
+    max-width: 90px;
+  }
   .sci
   {
     position: absolute;
@@ -234,6 +236,14 @@ header #toggle:after
   {
     width: 100%;
     border-radius: 5px;
+  }
+  .banner .content
+  {
+  max-width: 95%;
+  }
+  .prtimg {
+    border-radius: 5px;
+    width: 90%;
   }
 }
 .hjelpbox
@@ -377,4 +387,14 @@ form
 }
 #meme4 {
   visibility: hidden;
+}
+.godeord {
+  color: black;
+  margin: 20px;
+  font-size: 20px;
+}
+.godeordt {
+  color: black;
+  margin: 20px;
+  font-size: 25px;
 }

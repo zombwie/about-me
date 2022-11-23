@@ -7,7 +7,11 @@ const port = 25002
 var mysql = require('mysql')
 
 var conection = mysql.createConnection({
+<<<<<<< HEAD
     host: '...',
+=======
+    host: '',
+>>>>>>> 2f3b942602c8e95ec8daa80188c4563051e3bf27
     user: '',
     password: '',
     database: ''

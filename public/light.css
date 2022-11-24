@@ -180,6 +180,16 @@ header #toggle:after
   border-radius: 40px; ;
   width: 70%;
 }
+.chart {
+  background-color: #fff;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 40%;
+  border: #000 2px solid;
+  padding-top: 10px;
+}
 @media (max-width: 767px)
 {
   header
@@ -244,6 +254,9 @@ header #toggle:after
   .prtimg {
     border-radius: 5px;
     width: 90%;
+  }
+  .chart {
+    width: 300px;
   }
 }
 .hjelpbox

@@ -4,17 +4,15 @@ const { connect } = require('http2')
 const { connection } = require('mongoose')
 const app = express()
 const port = 25002
+const { Webhook, MessageBuilder } = require('discord-webhook-node');
+const hook = new Webhook("https://discord.com/api/webhooks/1021323340096471082/8q7T0KvytjoSM2IHYnSU8bVj1MxrjvRoAx_3klahN2h8uH4V1ctqZqPRhA8F76lhFBin");
 var mysql = require('mysql')
 
 var conection = mysql.createConnection({
-<<<<<<< HEAD
-    host: '...',
-=======
-    host: '',
->>>>>>> 2f3b942602c8e95ec8daa80188c4563051e3bf27
-    user: '',
-    password: '',
-    database: ''
+    host: '65.108.15.66',
+    user: 'u90_2n3WDdYx1l',
+    password: 'z+R=D99h^ud!=Bzrov7d5e2F',
+    database: 's90_visitors'
 })
 app.get('/', (req, res) => {
   readFile('public/index.html', (err, data) => {
@@ -55,6 +53,48 @@ app.get('/api', function(req, res){
     res.send(result[0])
   });
 });
+
+app.get('/formapi', function(req, res){
+  console.log('email: ' + req.query.email)
+  console.log('fedback: ' + req.query.fedback)
+  var email = req.query.email
+  var fedback = req.query.fedback
+
+  const embed = new MessageBuilder()
+  .setTitle('Nettside Fedback')
+  .setAuthor( email, 'https://cdn.discordapp.com/embed/avatars/0.png', 'http://65.108.15.66:25002/')
+  .setURL('http://65.108.15.66:25002/')
+  .addField('Inhold:', fedback, true)
+  .setColor('#00b0f4')
+  .setThumbnail('https://cdn.discordapp.com/attachments/1021323293732651009/1045293651816894504/4kantLogo.png')
+  .setTimestamp();
+  
+  hook.send(embed);
+
+  conection.query("INSERT INTO feedback (dato, email, feedback) VALUES ( NOW(), '" + email + "', '" + fedback + "')", function (err, result, fields) {
+    if (err) throw err;
+    res.sendStatus(200)
+  });
+});
+
+
+app.get('/download/:filename', function(req, res){
+
+    const filepath = __dirname + '/public/assets/' + req.params.filename;
+    res.download(filepath, "Bruker_veiledningNettverk.pdf");
+    (err) => {
+        if (err) {
+            console.log(err);
+            res.sendStatus(500);
+            res.send('Error');
+        } else {
+            console.log('Sent:', filepath);
+        }
+    };
+});
+
+
+
 
 app.listen(port, () => {
   console.log(`About me app listening on port ${port}`)

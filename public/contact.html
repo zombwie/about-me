@@ -6,6 +6,7 @@
   <title>hjelp</title>
   <link id="theme" rel="stylesheet" type="text/css" href="style.css"/>
   <script src="script/script.js"></script>
+  <script src="script/coments.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
@@ -16,16 +17,16 @@
       <a href="/" class="logo"><img src="media/Oliver_logo.svg" width="200%"></a>
       <div id="toggle" onclick="toggle()"></div>
     </header>
-    <div class="content" style="padding-bottom: 40%;">
+    <div class="content">
       <h2><span>Kontakt meg</span></h2>
         <div>
             <div>
               <form onsubmit="sendContact(event)" id="form">
                 <div class="hjelpbox">
-                    <input type="email" class="form-control" id="emailInput" placeholder="Skriv inn e-posten">
+                    <input type="email" class="form-control" id="emailInput" placeholder="Skriv inn e-posten" maxlength="40">
               </div>
               <div class="hjelpbox">
-                <textarea class="form-control" id="messageInput" rows="8" placeholder="Hva kan jeg hjelpe deg med?"></textarea>
+                <textarea class="form-control" id="messageInput" rows="8" placeholder="Hva kan jeg hjelpe deg med?" maxlength="250"></textarea>
               </div>
             <div style="text-align: center;">
               <div id="sendknapp">
@@ -34,6 +35,12 @@
             </form>
             </div>
           </div>  
+    </div>
+    <div>
+      <h2><span>Kommentarer</span></h2>
+      <div id="kommentar">
+
+      </div>
     </div>
   </section>
   <div id="navigation">

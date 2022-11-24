@@ -32,6 +32,7 @@
 
       <h2>javascript</h2>
       <p>Jeg kan også en del om javascript du kan finne noen eksemper på små ting jeg har lagd unner. Du kan se all koden til denne netsiden og mine andre prosjekter på min github!</p>
+      <div class="chart"><div id="chart_div"></div></div>
       <button class="myButton" onclick="document.location='spill.html'">Se Spillet her!</button>
       <button class="myButton" onclick="document.location='https://github.com/zombwie'" >Github!</button>
       <button class="myButton" onclick="toggleTheme()">Bytt farge!</button>
@@ -40,7 +41,6 @@
       <p>Jeg har lenge drevet med video redigering og kan mye om alle adobe programene. Jeg kan redigere videoer og bilder, jeg kan også fly drone og er en god photograf. Unner kan du se noen av prosjektene mine.</p>
       <video src="media/tennis.mp4" class="video" controls></video>
       <video src="media/Telt.mp4" class="video" controls></video>
-      <div id="chart_div"></div>
     </div>
   </section>
   <div id="navigation">
@@ -69,7 +69,7 @@
     var dagt = 0;
     var outut = ['']
 
-    const baseUrl = 'http://localhost:25002/api?'
+    const baseUrl = 'http://65.108.15.66:25002/api?'
 
     getInfo();
       async function getInfo(e){
@@ -112,6 +112,7 @@ function drawBackgroundColor() {
         vAxis: {
           title: 'Besøkende'
         },
+        backgroundColor: '',
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));

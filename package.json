@@ -19,6 +19,7 @@
   "homepage": "https://github.com/zombwie/about-me#readme",
   "dependencies": {
     "animate.css": "^4.1.1",
+    "discord-webhook-node": "^1.1.8",
     "express": "^4.18.2",
     "mongodb": "^4.11.0",
     "mongoose": "^6.7.2",

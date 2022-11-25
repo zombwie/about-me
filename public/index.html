@@ -18,11 +18,11 @@
       <div id="toggle" onclick="toggle()"></div>
     </header>
     <div class="content">
-      <h2>Velkommen!<br>jeg er <span>Oliver Ono Wingerei</span></h2>
-      <p>Hei, jeg heter Oliver og jeg liker og kode kule ting.</p>
+      <h2>Velkommen!<br>Jeg er <span>Oliver Ono Wingerei</span></h2>
+      <p>Hei, jeg heter Oliver og jeg liker å kode kule ting.</p>
       <p class="animate__animated animate__lightSpeedInLeft" id="visitors">test data</p>
       <div>
-        <button class="myButton" onclick="document.location='/meg.html'">finn ut mere!</button>
+        <button class="myButton" onclick="document.location='/meg.html'">Finn ut mer!</button>
       </div>
     </div>
   </section>
@@ -30,7 +30,7 @@
     <ul>
       <li><a href="index.html">Hjem</a></li>
       <li><a href="meg.html">Om meg</a></li>
-      <li><a href="contact.html">kontakt meg</a></li>
+      <li><a href="contact.html">Kontakt meg</a></li>
       <li><a href="portfolio.html">Portefølje</a></li>
       <button class="themeknapp" onclick="toggleTheme()">Bytt farge!</button>
       </label>
@@ -58,7 +58,7 @@
       const data = await res.json()
       const visitors = JSON.stringify(data)
       const besokende = JSON.parse(visitors).info[0].visitors
-      outEl.innerHTML = `Det er ${besokende} som her besøkt siden min! Ps.... den er live opptaterende!`
+      outEl.innerHTML = `Det er ${besokende} som her besøkt siden min! Ps.... telleren er live oppdaterende!`
     };
     getInfo()
     setInterval(myMethod, 1000);

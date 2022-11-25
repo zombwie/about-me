@@ -98,7 +98,7 @@ function oppgrader() {
             pupup();
 		}
 	} else {
-		alert("Du har ikke nok penger du trenger " + oppgraderingskostnad + " penger. Du er " + ~~prosent + "% av veien!");
+		alert("Du har ikke nok penger. Du trenger " + oppgraderingskostnad + " penger. Du er " + ~~prosent + "% på vei!");
 	}
 }
 

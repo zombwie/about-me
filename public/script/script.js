@@ -9,7 +9,7 @@ async function sendContact(ev) {
     {
       method: 'GET'
     });
-    alert('Tak for tilbagemeldingen!');
+    alert('Takk for tilbakemeldingen!');
   }
 
 

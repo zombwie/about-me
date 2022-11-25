@@ -10,7 +10,6 @@ async function sendContact(ev) {
       method: 'GET'
     });
     alert('Tak for tilbagemeldingen!');
-    newcomments() 
   }
 
 

@@ -116,7 +116,6 @@ header #toggle:after
   position: relative;
   display: inline-block;
   margin-top: 20px;
-  background: #fff;
   color: #000;
   padding: 10px 30px;
   text-decoration:  none;
@@ -196,8 +195,50 @@ header #toggle:after
   border: #000 2px solid;
   padding-top: 10px;
 }
+.commentboddy {
+  background-color: #5BACCC;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  box-shadow: #000 0px 0px 10px;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+h3 {
+  color: black;
+  font-size: 100%;
+  text-align: center;
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.form-control {
+  grid-column: 1 / span 3;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 120%;
+  width: 400px;
+  height: 70%;
+  border-radius: 15px
+}
+.form-colum {
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-content: center;
+}
+#formknapp {
+  grid-column: 1 / span 3;
+  display: flex;
+  justify-content: center;
+}
 @media (max-width: 767px)
 {
+  h3 {
+    padding-left: 1.7%;
+  }
   header
   {
     padding: 20px 50px;
@@ -264,31 +305,16 @@ header #toggle:after
   .chart {
     width: 300px;
   }
-}
-.hjelpbox
-{
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 10x;
-}
-.form-control
-{
-  font-size: 120%;
-  width: 75%;
-  height: 70%;
-  border-radius: 15px
-}
-form
-{
-  width: 200%;
-  border-radius: 50px;
-  text-align: center;
-  padding-right: 20%;
-  justify-content: center;
+  .commentboddy {
+    width: 100%;
+  }
+  .form-control {
+    width: 100%;
+  }
 }
 .myButton {
 	background-color: white;
-	border-radius: 44px;
+	border-radius: 5px;
   border: 2px solid #0C182C;
   color: #0C182C;
 	display: inline-block;
@@ -316,10 +342,6 @@ form
   .myButton {
     font-size: 170%;
   }
-}
-#sendknapp {
-  display: flex;
-  justify-content: center;
 }
 #bar {
   width: 100%;
@@ -419,18 +441,4 @@ form
   color: black;
   margin: 20px;
   font-size: 25px;
-}
-.commentboddy {
-  margin: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 200px;
-}
-h3 {
-  color: black;
-  font-size: 1.6em;
-  text-align: center;
 }

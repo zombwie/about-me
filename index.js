@@ -76,7 +76,13 @@ app.get('/formapi', function(req, res){
     res.sendStatus(200)
   });
 });
-
+app.get('/coments', function(req, res){
+  conection.query("SELECT * FROM feedback ORDER BY dato DESC limit 4;", function (err, result, fields) {
+    if (err) throw err;
+    res.status(200).json(result)
+    console.log("Comments featched")
+  });
+});
 
 app.get('/download/:filename', function(req, res){
 

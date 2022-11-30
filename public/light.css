@@ -19,6 +19,7 @@ header
   z-index: 1000;
   transition: 0.6s;
 }
+/* Path: style.css */
 header .logo
 {
   position: relative;
@@ -29,9 +30,10 @@ header .logo
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: 0.6s;
-  min-width: 100px;
-  max-width: 10%;
+  min-width: 70px;
+  max-width: 150px;
 }
+/*laster logo og setter størelse på logo*/
 header #toggle
 {
   position: relative;
@@ -39,6 +41,7 @@ header #toggle
   height: 30px;
   cursor: pointer;
 }
+/*laster toggle og setter størelse på toggle*/
 header #toggle:before
 {
   content: '';
@@ -48,6 +51,7 @@ header #toggle:before
   height: 2px;
   background: #fff;
 }
+/*setter farge og posisjon på toggle*/
 header #toggle:after
 {
   content: '';
@@ -57,6 +61,7 @@ header #toggle:after
   height: 2px;
   background: #fff;
 }
+/*setter farge og posisjon på toggle*/
 .banner.active #toggle:before
 {
   top: 50%;
@@ -111,7 +116,6 @@ header #toggle:after
   position: relative;
   display: inline-block;
   margin-top: 20px;
-  background: #fff;
   color: #000;
   padding: 10px 30px;
   text-decoration:  none;
@@ -436,4 +440,7 @@ h3 {
   color: black;
   margin: 20px;
   font-size: 25px;
+}
+#meg {
+  border-radius: 70px;
 }

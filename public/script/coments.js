@@ -3,7 +3,7 @@ console.log(kommentarEl);
 
 
 
-const baseUrl = 'http://localhost:25002/coments'
+const baseUrl = 'http://65.108.15.66:25002/coments'
 var num = 0;
 
 async function getInfo(){

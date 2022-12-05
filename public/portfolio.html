@@ -74,6 +74,10 @@
     getInfo();
       async function getInfo(e){
           var dag = d - dagt;
+          if (dag < 0){
+          dag = 30;
+          m = m - 1;
+          }
           var date = y + "-" + m + "-" + dag;
           var date2 = y + "-" + m + "-" + dag;
           const res = await fetch(baseUrl + "tid1=" + date2 + "%2000:00:00&tid2=" + date + "%2023:59:59",
@@ -86,7 +90,7 @@
           console.log(date + ": " + dag1)
           dagt = dagt + 1;
           outut.push(dag1)
-        if (dagt < 6){
+        if (dagt < 7){
           getInfo();
         }
         else{
@@ -102,7 +106,7 @@ function drawBackgroundColor() {
       data.addColumn('number', 'Besøkende');
 
       data.addRows([
-        [d - 6, outut[7]],   [d -5, outut[6]],   [d -4, outut[5]], [d -3, outut[4]], [d -2, outut[3]], [d - 1, outut[2]], [d, outut[1]],
+        [d - 6 , outut[7]],   [d -5 , outut[6]],   [d -4, outut[5]], [d -3, outut[4]], [d -2, outut[3]], [d - 1, outut[2]], [d, outut[1]],
       ]);
 
       var options = {

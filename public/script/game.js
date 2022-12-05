@@ -28,6 +28,7 @@ const memek3El = document.getElementById("meme3");
 const memek4El = document.getElementById("meme4");
 const sokkerEl = document.getElementById("sokker");
 const godeordEl = document.getElementById("quoutes");
+console.log(godeord)
 
 if (multiplyer == null) {
 	nivå = 1;

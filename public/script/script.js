@@ -5,12 +5,18 @@ async function sendContact(ev) {
     const senderEmail = document.getElementById('emailInput').value;
     const senderMessage = document.getElementById('messageInput').value;
 
+    if (senderEmail == '' || senderMessage == '') {
+        alert('Du må fylle ut alle feltene');
+    }
+    else {
+
     const res = await fetch(baseUrl + 'email=' + senderEmail + '&fedback=' + senderMessage,
     {
       method: 'GET'
     });
     alert('Tak for tilbagemeldingen!');
     newcomments();
+  }
   }
 
 

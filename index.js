@@ -85,7 +85,7 @@ app.get('/coments', function(req, res){
 app.get('/download/:filename', function(req, res){
 
     const filepath = __dirname + '/public/assets/' + req.params.filename;
-    res.download(filepath, "Bruker_veiledningNettverk.pdf");
+    res.download(filepath, req.params.filename);
     (err) => {
         if (err) {
             console.log(err);

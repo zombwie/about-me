@@ -4,16 +4,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>meg</title>
-  <link id="theme" rel="stylesheet" type="text/css" href="style.css"/>
+  <link id="theme" rel="stylesheet" type="text/css" href="style.css">
   <script src="script/script.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
   <section class="banner" id="sec">.
     <header>
-      <a href="/" class="logo"><img src="media/Oliver_logo.svg" width="200%"></a>
+      <a href="/" class="logo"><img src="media/Oliver_logo.svg" alt="logo" width="200%"></a>
       <div id="toggle" onclick="toggle()"></div>
     </header>
     <div class="content">
@@ -45,7 +46,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
-    <script type="text/javascript">
+    <script>
     function toggle(){
       var sec = document.getElementById('sec');
       var nav = document.getElementById('navigation');

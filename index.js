@@ -102,6 +102,7 @@ app.get('/download/:filename', function(req, res){
 
 app.listen(port, () => {
   console.log(`About me app listening on port ${port}`)
+  console.log(`working`)
 })
 
 app.use(express.static('public'))

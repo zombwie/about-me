@@ -2,7 +2,7 @@ const express = require('express')
 const { readFile } = require('fs')
 const { connect } = require('http2')
 const app = express()
-const port = 25569
+const port = 25002
 const { Webhook, MessageBuilder } = require('discord-webhook-node');
 const hook = new Webhook("https://discord.com/api/webhooks/1021323340096471082/8q7T0KvytjoSM2IHYnSU8bVj1MxrjvRoAx_3klahN2h8uH4V1ctqZqPRhA8F76lhFBin");
 var mysql = require('mysql')
@@ -61,8 +61,8 @@ app.get('/formapi', function(req, res){
 
   const embed = new MessageBuilder()
   .setTitle('Nettside Fedback')
-  .setAuthor( email, 'https://cdn.discordapp.com/embed/avatars/0.png', 'http://88.99.136.124:25569/')
-  .setURL('http://88.99.136.124:25569/')
+  .setAuthor( email, 'https://cdn.discordapp.com/embed/avatars/0.png', 'http://65.108.15.66:25002/')
+  .setURL('http://65.108.15.66:25002/')
   .addField('Inhold:', fedback, true)
   .setColor('#00b0f4')
   .setThumbnail('https://cdn.discordapp.com/attachments/1021323293732651009/1045293651816894504/4kantLogo.png')

@@ -1,7 +1,7 @@
 async function sendContact(ev) {
     ev.preventDefault();
 
-    const baseUrl = 'http://88.99.136.124:25569/formapi?'
+    const baseUrl = 'http://65.108.15.66:25002/formapi?'
     const senderEmail = document.getElementById('emailInput').value;
     const senderMessage = document.getElementById('messageInput').value;
 

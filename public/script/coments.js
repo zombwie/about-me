@@ -2,7 +2,7 @@ const kommentarEl = document.getElementById('kommentar');
 
 
 
-const baseUrl = 'http://88.99.136.124:25569/coments'
+const baseUrl = 'http://65.108.15.66:25002/coments'
 var num = 0;
 
 async function getInfo(){

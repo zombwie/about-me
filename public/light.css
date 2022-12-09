@@ -61,7 +61,6 @@ header #toggle:after
   height: 2px;
   background: #fff;
 }
-/*setter farge og posisjon på toggle*/
 .banner.active #toggle:before
 {
   top: 50%;

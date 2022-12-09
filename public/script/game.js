@@ -212,7 +212,7 @@ function nomemesplayer() {
 var pressed = false;
 
 
-//cheesy
+//cheesy spawner videoen og gjør den synlig og spiller den av og gjør den bevegelig
 function cheld() {
     pressed = true;
     cheesymove()
@@ -263,7 +263,7 @@ function scm() {
 
 
 
-// quoute
+// quoute spawner box og putten en qoute i den boxen
 
 function qheld() {
     pressed = true;

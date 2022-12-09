@@ -1,5 +1,5 @@
+// logger ut komentarene og spør backend apien om de nyeste komentarene
 const kommentarEl = document.getElementById('kommentar');
-
 
 
 const baseUrl = 'http://65.108.15.66:25002/coments'
@@ -20,6 +20,8 @@ async function getInfo(){
     }
 }
 getInfo();
+
+// loader de nyeste kommentaren 
 function newcomments() {
     num = 0;
     kommentarEl.innerHTML = '';

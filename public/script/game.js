@@ -1,3 +1,4 @@
+// henter data fra localstorage
 const pengerS = JSON.parse(localStorage.getItem("penger"));
 const nivåS = JSON.parse(localStorage.getItem("nivå"));
 const spillertidS = JSON.parse(localStorage.getItem("spillertid"));
@@ -5,6 +6,7 @@ const multiplyerS = JSON.parse(localStorage.getItem("multiplyer"));
 const oppgaderingskostnadS = JSON.parse(localStorage.getItem("oppgraderingskostnad"));
 const minutterS = JSON.parse(localStorage.getItem("minutter"));
 
+// definerer variabler med tingene fra storage
 var penger = pengerS;
 var nivå = nivåS;
 var spillertid = spillertidS;
@@ -14,6 +16,7 @@ var minutter = minutterS;
 var prosent = 0;
 var cheesys = false;
 
+// henter elementene
 const kostEL = document.getElementById('kost');
 const pengerEl = document.getElementById("penger");
 const nivåEl = document.getElementById("nivå");
@@ -28,18 +31,19 @@ const memek3El = document.getElementById("meme3");
 const memek4El = document.getElementById("meme4");
 const sokkerEl = document.getElementById("sokker");
 const godeordEl = document.getElementById("quoutes");
-console.log(godeord)
 
+// sjekker om det er null, hvis det er null så settes det til 1
 if (multiplyer == null) {
 	nivå = 1;
 	multiplyer = 1;
 	penger = 100;
 	oppgraderingskostnad = 100;
 }
+// setter elementene til det som er i storage
 const delay = (delayInms) => {
 	return new Promise(resolve => setTimeout(resolve, delayInms));
 };
-
+// teller tid
 function teller() {
 	spillertid = spillertid + 1;
 	if (spillertid >= 60) {
@@ -48,6 +52,7 @@ function teller() {
 		localStorage.setItem("minutter", JSON.stringify(minutter));
 	}
 }
+// timer
 const timer = async() => {
 	pengerTeller();
 	let delayres = await delay(1000);
@@ -55,6 +60,7 @@ const timer = async() => {
 	timer();
 };
 timer();
+// kjører hvert sekund og oppdaterer ting
 function pengerTeller() {
 	penger = penger + 1 * multiplyer;
 	pengerEl.innerHTML = 'Penger: ' + penger;
@@ -104,7 +110,7 @@ function oppgrader() {
 }
 
 
-
+// sjekker levels
 function memes() {
     if (nivå > 4) {
         memes = 1;

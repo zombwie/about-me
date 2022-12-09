@@ -1,3 +1,4 @@
+// tar input fra bruker og sender til server med api får å save det i databasen
 async function sendContact(ev) {
     ev.preventDefault();
 
@@ -27,7 +28,7 @@ async function sendContact(ev) {
 
 
 
-  
+// themes  
 const theme = document.getElementsByTagName('link')[0];
 
 const themes = JSON.parse(localStorage.getItem("theme"));

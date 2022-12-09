@@ -1,3 +1,5 @@
+// impoter node moduler
+
 const express = require('express')
 const { readFile } = require('fs')
 const { connect } = require('http2')
@@ -7,12 +9,15 @@ const { Webhook, MessageBuilder } = require('discord-webhook-node');
 const hook = new Webhook("https://discord.com/api/webhooks/1021323340096471082/8q7T0KvytjoSM2IHYnSU8bVj1MxrjvRoAx_3klahN2h8uH4V1ctqZqPRhA8F76lhFBin");
 var mysql = require('mysql')
 
+// mysql 
 var conection = mysql.createConnection({
     host: '65.108.15.66',
     user: 'u90_2n3WDdYx1l',
     password: 'z+R=D99h^ud!=Bzrov7d5e2F',
     database: 's90_visitors'
 })
+
+// sender siden ut på / dir
 app.get('/', (req, res) => {
   readFile('public/index.html', (err, data) => {
     if (err) {
@@ -22,16 +27,19 @@ app.get('/', (req, res) => {
     res.writeHead(200)
     res.end(data)
   })
+  // øker visitor counteren med 1 for hvert besøk
   var sql = "UPDATE visits SET visitors = visitors + 1";
   conection.query(sql, function (err, result) {
     if (err) throw err;
   });
+  // loggger med dato og til får å graffe ut 
   var sql = "INSERT INTO datovisits (dato, tall) VALUES ( NOW(), 'first')";
   conection.query(sql, function (err, result) {
     if (err) throw err;
     });
 })
 
+// api får å sjekke 
 app.get('/info', async function(req,res){
 conection.connect(function(err) {
   conection.query("SELECT * FROM visits", function (err, result, fields) {
@@ -41,9 +49,9 @@ conection.connect(function(err) {
    });
 });  
 })
+
+// api for å søke databasen etter hvor mange visitors som besøket mellom 2 øskete tider
 app.get('/api', function(req, res){
-  console.log('tid1: ' + req.query.tid1)
-  console.log('tid2: ' + req.query.tid2)
   var tid1 = req.query.tid1
   var tid2 = req.query.tid2
   conection.query("SELECT COUNT(*) AS TEST FROM datovisits WHERE dato BETWEEN '" + tid1 + "' AND '" + tid2 + "'", function (err, result, fields) {
@@ -53,6 +61,8 @@ app.get('/api', function(req, res){
   });
 });
 
+
+// sender info fra tilbakemeling sjema til discord med webhock og lagder det i databasen
 app.get('/formapi', function(req, res){
   console.log('email: ' + req.query.email)
   console.log('fedback: ' + req.query.fedback)
@@ -75,6 +85,8 @@ app.get('/formapi', function(req, res){
     res.sendStatus(200)
   });
 });
+
+// henter de 4 nyeste kommentarene og sender dem til clienten
 app.get('/coments', function(req, res){
   conection.query("SELECT * FROM feedback ORDER BY dato DESC limit 4;", function (err, result, fields) {
     if (err) throw err;
@@ -82,6 +94,8 @@ app.get('/coments', function(req, res){
   });
 });
 
+
+// søker etter filen man prøver og hente i downloads folderen og sender det til clienten 
 app.get('/download/:filename', function(req, res){
 
     const filepath = __dirname + '/public/assets/' + req.params.filename;
@@ -99,7 +113,7 @@ app.get('/download/:filename', function(req, res){
 
 
 
-
+// apner apppen på porten
 app.listen(port, () => {
   console.log(`About me app listening on port ${port}`)
   console.log(`working`)

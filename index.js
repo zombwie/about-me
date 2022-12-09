@@ -47,7 +47,7 @@ app.get('/api', function(req, res){
   var tid1 = req.query.tid1
   var tid2 = req.query.tid2
   conection.query("SELECT COUNT(*) AS TEST FROM datovisits WHERE dato BETWEEN '" + tid1 + "' AND '" + tid2 + "'", function (err, result, fields) {
-    console.log(result[0])
+    console.log("Visits loada mellom" + tid1 + "-" + tid2)
     if (err) throw err;
     res.send(result[0])
   });
